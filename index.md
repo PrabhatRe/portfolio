@@ -1,4 +1,7 @@
-# Prabhat’s Learning Logs
+---
+layout: default
+title: Prabhat’s Learning Logs
+---
 
 ## Programming
 - [Memory Management in C](programming/memory-management-in-c)

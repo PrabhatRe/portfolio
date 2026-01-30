@@ -41,3 +41,12 @@ pre {
   padding: 16px;
   overflow-x: auto;
 }
+
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  margin: 20px 0;
+}
+

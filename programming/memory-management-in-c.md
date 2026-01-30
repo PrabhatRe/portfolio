@@ -1,4 +1,7 @@
-
+---
+layout: default
+title: memory management in c
+---
 
 hello !! this is my first post here, i am doing this to learn and express, also to keep record of what i am learning  **༎ຶ⁠‿⁠༎ຶ**
 
@@ -10,7 +13,11 @@ char *s = “ hello world”;
 ```
 i was rather dumb to not understand the difference ( those who don't know **char s[] is contiguous shit**, while **\*s is a string literal**). after some digging  i found how *differently* they are stored in memory
 
-the c program when compiled, it generates a executable file of **ELF** format![](../assets/images/elf.jpg)
+the c program when compiled, it generates a executable file of **ELF** format <img src="/portfolio/assets/images/elf.jpg" style="width:400px;">
+
+
+
+
 *not this one !!*![](../assets/images/elf-header.jpg)
 
 which then loaded onto **RAM** for execution( also not the whole file lol - *OS magic lalala..*)
