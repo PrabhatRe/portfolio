@@ -1,7 +1,4 @@
----
 
-title: memory management in c
----
 
 hello !! this is my first post here, i dont know why i am doing this **༎ຶ⁠‿⁠༎ຶ** 
 
