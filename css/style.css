@@ -40,7 +40,7 @@ p, li {
   margin-bottom: 1.4rem;
 }
 
-/* ---------- Links ---------- */
+/* ---------- Links (base) ---------- */
 
 a {
   color: #8ab4f8;
@@ -50,6 +50,39 @@ a {
 
 a:hover {
   border-bottom-color: #8ab4f8;
+}
+
+/* ---------- Inline links (inside text) ---------- */
+
+p a {
+  border-bottom-style: dotted;
+}
+
+p a:hover {
+  border-bottom-style: solid;
+}
+
+/* ---------- Directory links ---------- */
+
+a[href$="/"] {
+  color: #9ae6b4;
+  font-weight: 500;
+}
+
+a[href$="/"]::before {
+  content: "📁 ";
+  opacity: 0.7;
+}
+
+/* ---------- Markdown file links ---------- */
+
+a[href$=".md"] {
+  color: #8ab4f8;
+}
+
+a[href$=".md"]::before {
+  content: "📄 ";
+  opacity: 0.7;
 }
 
 /* ---------- Code ---------- */
@@ -80,14 +113,24 @@ img {
   margin: 2.5rem 0;
 }
 
-/* ---------- Lists ---------- */
+/* ---------- Lists (index pages / file explorer feel) ---------- */
 
-ul {
-  padding-left: 1.2rem;
+main ul {
+  list-style: none;
+  padding-left: 0;
+  margin-top: 2rem;
 }
 
-li {
-  margin-bottom: 0.6rem;
+main ul li {
+  margin-bottom: 0.8rem;
+  font-size: 1.05rem;
+}
+
+/* filenames look like filenames */
+
+main ul li a {
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 0.95rem;
 }
 
 /* ---------- Small polish ---------- */
