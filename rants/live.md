@@ -13,7 +13,7 @@ Where even am I?
 
 &nbsp;
 
-To scavenge for dreams and purpose just to survive—  
+To scavenge for dreams and purpose just to survive,  
 how pitiful can a life be?
 
 Dreams taken.  
