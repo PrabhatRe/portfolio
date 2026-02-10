@@ -11,6 +11,21 @@
 
     <!-- Styles -->
     <link rel="stylesheet" href="{{ '/css/style.css' | relative_url }}">
+
+    <!-- MathJax (THIS IS THE FIX) -->
+    <script>
+      MathJax = {
+        tex: {
+          inlineMath: [['$', '$'], ['\\(', '\\)']],
+          displayMath: [['$$', '$$']]
+        }
+      };
+    </script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"
+      async>
+    </script>
+
   </head>
 
   <body>
