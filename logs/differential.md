@@ -7,7 +7,7 @@ We start from basics:
 Integration → differentiation → series → limits.  
 Archimedes, in the ancient era — it all began with the *method of exhaustion*, the first glimpse of integral calculus.
 
-Okay okay we went too far back. Let me just stick to **differential calculus**.
+we went too far back. let's just stick to **differential calculus**.
 
 ---
 
@@ -15,15 +15,15 @@ Okay okay we went too far back. Let me just stick to **differential calculus**.
 
 Slope describes *steepness*.
 
-![](../assets/images/sisy1.png) ![](../assets/images/sisy2.jpg)
+![](../assets/images/sisy1.png) 
 
-The steepness is measured between two points \((x_1, y_1)\), \((x_2, y_2)\).
+The steepness is measured between two points $(x_1, y_1)$, $(x_2, y_2)$.
 
-An observational note: slope (or as I call it, *steepness*) is attributed to the range \((x_1, x_2)\), so:
+An observational note: slope (or as I call it, *steepness*) is attributed to the range $(x_1, x_2)$, so:
 
-\[
+$$
 \frac{y_2 - y_1}{x_2 - x_1}
-\]
+$$
 
 is the **average rate of change** over that interval.
 
@@ -33,24 +33,24 @@ is the **average rate of change** over that interval.
 
 Let:
 
-\[
+$$
 d(t) = t^2 + t + 1
-\]
+$$
 
-where \(t\) is time and \(d(t)\) is distance as a function of time.
+where $t$ is time and $d(t)$ is distance as a function of time.
 
-At \(t = 2\), \(d = 7\)  
-At \(t = 3\), \(d = 13\)
+At $t = 2$, $d = 7$  
+At $t = 3$, $d = 13$
 
 Points:
-- \(A(2, 7)\)
-- \(B(3, 13)\)
+- $A(2, 7)$
+- $B(3, 13)$
 
 Slope:
 
-\[
+$$
 \frac{13 - 7}{3 - 2} = 6
-\]
+$$
 
 This is the **average speed** between 2 and 3.
 
@@ -60,70 +60,71 @@ We bring A and B so close they’re indistinguishable, but not exactly overlappi
 
 Let:
 
-\[
+$$
 t_1 = 2
-\]
-\[
-t_2 = 2 + h
-\]
+$$
 
-where \(h\) is very, very, very, very small almost tending to 0, but not exactly 0.
+$$
+t_2 = 2 + h
+$$
+
+where $h$ is very, very, very, very small almost tending to 0, but not exactly 0.
 
 Slope becomes:
 
-\[
+$$
 \frac{d(2+h) - d(2)}{h}
-\]
+$$
 
 Compute:
 
-\[
+$$
 d(2+h) = (2+h)^2 + (2+h) + 1
-\]
+$$
 
-\[
+$$
 = 4 + 4h + h^2 + 2 + h + 1
-\]
+$$
 
-\[
+$$
 = 7 + 5h + h^2
-\]
+$$
 
 So,
 
-\[
+$$
 \frac{d(2+h) - 7}{h}
 =
 \frac{5h + h^2}{h}
 =
 5 + h
-\]
+$$
 
-As \(h \to 0\):
+As $h \to 0$:
 
-\[
+$$
 \text{Instantaneous speed at } t = 2 \text{ is } 5
-\]
+$$
 
 which matches:
 
-\[
+$$
 d'(t) = 2t + 1
-\]
+$$
 
 And a tangent line:
 
-\[
+$$
 y = mx + c
-\]
+$$
 
 can be drawn with that slope.
 
 Wowwww coincidenceeee.
 
-\[
+$$
 f'(x) = \lim_{h \to 0} \frac{f(x+h) - f(x)}{h}
-\]
+$$
 
 Bruh, why am I deriving this lol.
 
@@ -133,21 +134,21 @@ Bruh, why am I deriving this lol.
 
 The error function:
 
-\[
+$$
 (y_{output} - y)^2
-\]
+$$
 
 (ignore coefficients for now) looks like an upward parabola.
 
-\[
+$$
 J(b) = (y_{output} - y)^2
-\]
+$$
 
-To know what \(b\) is, -> [look here](../logs/ai/supervised/linear.md).
+To know what $b$ is, -> [look here](../logs/ai/supervised/linear.md).
 
-And it is because of \(b\) that the error is occurring.
+And it is because of $b$ that the error is occurring.
 
-The \(X\)'s are innocent. They are just input variables.
+The $X$'s are innocent. They are just input variables.
 
 *(not fully innocent.)*
 
@@ -157,15 +158,15 @@ The \(X\)'s are innocent. They are just input variables.
 
 If we have a simple linear model:
 
-\[
+$$
 y_{output} = b_0 + b_1 x
-\]
+$$
 
 Then the cost function becomes:
 
-\[
+$$
 J(b_0, b_1) = (b_0 + b_1 x - y)^2
-\]
+$$
 
 Now we ask:
 
@@ -173,40 +174,41 @@ How much is **each parameter** contributing to the error?
 
 We partially differentiate.
 
-With respect to \(b_0\):
+With respect to $b_0$:
 
-\[
+$$
 \frac{\partial J}{\partial b_0}
 =
 2(b_0 + b_1 x - y)
-\]
+$$
 
-With respect to \(b_1\):
+With respect to $b_1$:
 
-\[
+$$
 \frac{\partial J}{\partial b_1}
 =
 2(b_0 + b_1 x - y)x
-\]
+$$
 
 the error function is no more a 2D parabola *(RIP)*.
 
 It’s a *surface*.
 
 ![](../assets/images/3derror.png)
+
 ---
 
 ## The Gradient
 
 The gradient vector is:
 
-\[
+$$
 \nabla J =
 \begin{bmatrix}
 \frac{\partial J}{\partial b_0} \\
 \frac{\partial J}{\partial b_1}
 \end{bmatrix}
-\]
+$$
 
 This vector points in the direction of **steepest increase** of the error.
 
@@ -216,7 +218,7 @@ i.e trying to maximize the error function.
 
 That’s not what we want we need to minimize.
 
-So we multiply by \(-1\).
+So we multiply by $-1$.
 
 That’s where the **descent** comes in.
 
@@ -224,24 +226,24 @@ That’s where the **descent** comes in.
 
 ## Update Rule
 
-\[
+$$
 b := b - \alpha \nabla J
-\]
+$$
 
 Or component-wise:
 
-\[
+$$
 b_0 := b_0 - \alpha \frac{\partial J}{\partial b_0}
-\]
+$$
 
-\[
+$$
 b_1 := b_1 - \alpha \frac{\partial J}{\partial b_1}
-\]
+$$
 
 Where:
 
-- \(\alpha\) = *learning rate*
-- It controls how much we are changing the \(b\).
+- $\alpha$ = *learning rate*
+- It controls how much we are changing the $b$.
 
 ![](../assets/images/alpharate.png)
 
