@@ -112,13 +112,8 @@ $$
 d'(t) = 2t + 1
 $$
 
-And a tangent line:
+And a tangent line: $y = mx + c$ can be drawn with that slope.
 
-$$
-y = mx + c
-$$
-
-can be drawn with that slope.
 
 Wowwww coincidenceeee.
 
