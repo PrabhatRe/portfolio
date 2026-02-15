@@ -1,27 +1,31 @@
-/* Layout mood */
 .post {
-  max-width: 720px;
-  margin: 70px auto;
-  padding: 0 22px;
-  line-height: 1.9;
-  font-size: 18px;
+  max-width: 780px;
+  margin: 60px auto;
+  padding: 20px;
+  background: #0d1117;
+  color: #c9d1d9;
+  font-family: "Source Serif 4", serif;
+  line-height: 1.8;
 }
 
-/* headings spacing */
-.post h1, .post h2, .post h3 {
-  margin-top: 2.2em;
-  margin-bottom: 0.6em;
+.post-title {
+  font-family: monospace;
+  color: #58a6ff;
+  margin-bottom: 30px;
 }
 
-/* quote style */
-.post blockquote {
-  border-left: 3px solid #6aa6ff;
-  padding-left: 14px;
-  opacity: 0.85;
-  font-style: italic;
+/* terminal text */
+#terminal {
+  white-space: pre-wrap;
+  font-family: "Courier New", monospace;
 }
 
-/* smoother appearance */
-.post p, .post li {
-  will-change: opacity, transform;
+/* blinking cursor */
+.cursor::after {
+  content: "█";
+  animation: blink 1s steps(1) infinite;
+}
+
+@keyframes blink {
+  50% { opacity: 0; }
 }
