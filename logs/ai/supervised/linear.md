@@ -1,3 +1,7 @@
+---
+layout: post
+---
+
 Supervised learning model works on **labeled data** for context – [Read more](../overview.md)
 Fuck there are a ton of shit: **linear**, **logistic** regression, **decision** trees, random forests, **SVM**, naive bayes, KNN (I find him sus)
 

@@ -1,3 +1,7 @@
+---
+layout: post
+---
+
 Is it because a lot of time has passed since differential calculus harassed me? It started feeling abstract. The other day when I was looking at “linear regression ML”, it had a concept called **gradient descent**.
 
 This got me hooked.

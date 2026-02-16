@@ -1,3 +1,6 @@
+---
+layout: post
+---
 
 On GOD this is so overwhelming.
 

@@ -1,3 +1,7 @@
+---
+layout: post
+---
+
 # tranformations
 
 Rules of transformation *shall* be obeyed:

@@ -1,3 +1,7 @@
+---
+layout: post
+---
+
 > **“There is but one truly serious philosophical problem, and that is suicide.”** - *Albert Camus*
 
 What is *that* driving people to live?  

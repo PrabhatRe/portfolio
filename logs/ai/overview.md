@@ -1,3 +1,7 @@
+---
+layout: post
+---
+
 I see no direction — a lot of buzzwords are being thrown around: transformers, AI, gen AI, agentic AI shit.
 
 To begin, what is AI?
