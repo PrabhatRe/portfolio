@@ -117,14 +117,17 @@ Fun fact: every vector on a 2D plane can be represented using exactly two linear
 
 Example basis vectors:
 
+
 $\begin{bmatrix}
-0  \\
-1 
+0 \\
+1
 \end{bmatrix}$, 
+
 $\begin{bmatrix}
 1 \\
-0 
+0
 \end{bmatrix}$
+
 
 *the infamous $\hat{i}$ and $\hat{j}$*
 
