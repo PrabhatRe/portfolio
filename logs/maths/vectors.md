@@ -82,7 +82,7 @@ $$
 Vector addition looks funny geometrically:  
 join the tail of one vector to the head of another, and the resultant vector is drawn from the tail of the first vector to the head of the last vector.
 
-<!-- add animation here -->
+![](../../assets/images/vecadd.svg)
 
 This simply means the second vector takes the head of the first as its reference.
 
@@ -107,7 +107,7 @@ $$
 2\vec{v} = 2x\mathbf{i} + 2y\mathbf{j}
 $$
 
-<!-- add animation: vector stretching from origin -->
+![](../../assets/images/scalarmul.svg)
 
 ---
 

@@ -1,0 +1,68 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-6 -6 12 12" width="640" height="640">
+
+<style>
+.bg { fill:#0b0f1a; }
+.grid { stroke:#1f2433; stroke-width:0.03; }
+.axis { stroke:#7a82a6; stroke-width:0.08; }
+
+.vecV { stroke:#4da6ff; stroke-width:0.16; stroke-linecap:round; }
+.vecScaled { stroke:#ffd54f; stroke-width:0.18; stroke-linecap:round; }
+
+</style>
+
+<defs>
+
+<!-- smaller arrow, compensated -->
+
+<marker id="arrowBlue" markerUnits="userSpaceOnUse" viewBox="0 0 6 6"
+     refX="5" refY="3" markerWidth="0.6" markerHeight="0.6" orient="auto"> <path d="M0,0 L6,3 L0,6 Z" fill="#4da6ff"/> </marker>
+
+<marker id="arrowGold" markerUnits="userSpaceOnUse" viewBox="0 0 6 6"
+     refX="5" refY="3" markerWidth="0.7" markerHeight="0.7" orient="auto"> <path d="M0,0 L6,3 L0,6 Z" fill="#ffd54f"/> </marker>
+
+</defs>
+
+<!-- background -->
+
+<rect class="bg" x="-10" y="-10" width="20" height="20"/>
+
+<!-- grid -->
+
+<g class="grid">
+<g>
+<line x1="-6" y1="-6" x2="-6" y2="6"/><line x1="-5" y1="-6" x2="-5" y2="6"/>
+<line x1="-4" y1="-6" x2="-4" y2="6"/><line x1="-3" y1="-6" x2="-3" y2="6"/>
+<line x1="-2" y1="-6" x2="-2" y2="6"/><line x1="-1" y1="-6" x2="-1" y2="6"/>
+<line x1="0" y1="-6" x2="0" y2="6"/><line x1="1" y1="-6" x2="1" y2="6"/>
+<line x1="2" y1="-6" x2="2" y2="6"/><line x1="3" y1="-6" x2="3" y2="6"/>
+<line x1="4" y1="-6" x2="4" y2="6"/><line x1="5" y1="-6" x2="5" y2="6"/>
+<line x1="6" y1="-6" x2="6" y2="6"/>
+</g>
+<g>
+<line x1="-6" y1="-6" x2="6" y2="-6"/><line x1="-6" y1="-5" x2="6" y2="-5"/>
+<line x1="-6" y1="-4" x2="6" y2="-4"/><line x1="-6" y1="-3" x2="6" y2="-3"/>
+<line x1="-6" y1="-2" x2="6" y2="-2"/><line x1="-6" y1="-1" x2="6" y2="-1"/>
+<line x1="-6" y1="0" x2="6" y2="0"/><line x1="-6" y1="1" x2="6" y2="1"/>
+<line x1="-6" y1="2" x2="6" y2="2"/><line x1="-6" y1="3" x2="6" y2="3"/>
+<line x1="-6" y1="4" x2="6" y2="4"/><line x1="-6" y1="5" x2="6" y2="5"/>
+<line x1="-6" y1="6" x2="6" y2="6"/>
+</g>
+</g>
+
+<!-- axes -->
+
+<line class="axis" x1="-6" y1="0" x2="6" y2="0"/>
+<line class="axis" x1="0" y1="-6" x2="0" y2="6"/>
+
+<!-- original vector -->
+
+<line class="vecV" x1="0" y1="0" x2="1.95" y2="1.46" marker-end="url(#arrowBlue)"/>
+
+<!-- scaled vector -->
+
+<line class="vecScaled" x1="0" y1="0" marker-end="url(#arrowGold)">
+    <animate attributeName="x2" values="1.95;3.9;3.9;1.95" dur="5s" repeatCount="indefinite"/>
+    <animate attributeName="y2" values="1.46;2.92;2.92;1.46" dur="5s" repeatCount="indefinite"/>
+</line>
+
+</svg>

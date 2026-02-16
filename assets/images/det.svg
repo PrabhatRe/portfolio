@@ -1,0 +1,150 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-12 -12 24 24" width="720" height="720">
+
+<style>
+.bg { fill:#0b0f1a; }
+
+/* minor grid */
+.minorLine { stroke:#1f2433; stroke-width:0.02; }
+
+/* major grid */
+.majorLine { stroke:#3a4155; stroke-width:0.05; }
+
+/* reference axes */
+.staticAxis { stroke:#8a93b2; stroke-width:0.08; opacity:0.6; }
+
+/* unit square */
+.unitSquare {
+    fill:gold;
+    fill-opacity:0.25;
+    stroke:gold;
+    stroke-width:0.09;
+    filter:url(#glow);
+}
+
+/* basis vectors */
+.iVec { stroke:#ff4d4d; stroke-width:0.13; }
+.jVec { stroke:#00e676; stroke-width:0.13; }
+
+/* transformation animation */
+.transformSpace {
+    transform-origin: 0 0;
+    transform-box: view-box;
+    animation: transformMatrix 8s infinite ease-in-out;
+}
+
+@keyframes transformMatrix {
+    0%   { transform: matrix(1,0,0,1,0,0); }
+    40%  { transform: matrix(2,0.5,0.5,1.5,0,0); } /* det ≈ 2.75 */
+    60%  { transform: matrix(2,0.5,0.5,1.5,0,0); }
+    100% { transform: matrix(1,0,0,1,0,0); }
+}
+</style>
+
+<defs>
+
+<!-- glow -->
+
+<filter id="glow">
+<feGaussianBlur stdDeviation="0.25" result="b"/>
+<feMerge>
+<feMergeNode in="b"/>
+<feMergeNode in="SourceGraphic"/>
+</feMerge>
+</filter>
+
+<!-- arrowheads -->
+
+<marker id="arrowRed" markerWidth="0.6" markerHeight="0.6" refX="0.45" refY="0.3" orient="auto">
+<polygon points="0,0 0.6,0.3 0,0.6" fill="#ff4d4d"/>
+</marker>
+
+<marker id="arrowGreen" markerWidth="0.6" markerHeight="0.6" refX="0.45" refY="0.3" orient="auto">
+<polygon points="0,0 0.6,0.3 0,0.6" fill="#00e676"/>
+</marker>
+
+</defs>
+
+<!-- background -->
+
+<rect class="bg" x="-20" y="-20" width="40" height="40"/>
+
+<!-- static axes -->
+
+<line class="staticAxis" x1="-12" y1="0" x2="12" y2="0"/>
+<line class="staticAxis" x1="0" y1="-12" x2="0" y2="12"/>
+
+<!-- TRANSFORMED SPACE -->
+
+<g class="transformSpace">
+
+```
+<!-- minor grid -->
+<g class="minorLine">
+    <!-- vertical -->
+    <line x1="-12" y1="-12" x2="-12" y2="12"/>
+    <line x1="-11" y1="-12" x2="-11" y2="12"/>
+    <line x1="-10" y1="-12" x2="-10" y2="12"/>
+    <line x1="-9" y1="-12" x2="-9" y2="12"/>
+    <line x1="-8" y1="-12" x2="-8" y2="12"/>
+    <line x1="-7" y1="-12" x2="-7" y2="12"/>
+    <line x1="-6" y1="-12" x2="-6" y2="12"/>
+    <line x1="-5" y1="-12" x2="-5" y2="12"/>
+    <line x1="-4" y1="-12" x2="-4" y2="12"/>
+    <line x1="-3" y1="-12" x2="-3" y2="12"/>
+    <line x1="-2" y1="-12" x2="-2" y2="12"/>
+    <line x1="-1" y1="-12" x2="-1" y2="12"/>
+    <line x1="1" y1="-12" x2="1" y2="12"/>
+    <line x1="2" y1="-12" x2="2" y2="12"/>
+    <line x1="3" y1="-12" x2="3" y2="12"/>
+    <line x1="4" y1="-12" x2="4" y2="12"/>
+    <line x1="5" y1="-12" x2="5" y2="12"/>
+    <line x1="6" y1="-12" x2="6" y2="12"/>
+    <line x1="7" y1="-12" x2="7" y2="12"/>
+    <line x1="8" y1="-12" x2="8" y2="12"/>
+    <line x1="9" y1="-12" x2="9" y2="12"/>
+    <line x1="10" y1="-12" x2="10" y2="12"/>
+    <line x1="11" y1="-12" x2="11" y2="12"/>
+    <line x1="12" y1="-12" x2="12" y2="12"/>
+
+    <!-- horizontal -->
+    <line x1="-12" y1="-12" x2="12" y2="-12"/>
+    <line x1="-12" y1="-11" x2="12" y2="-11"/>
+    <line x1="-12" y1="-10" x2="12" y2="-10"/>
+    <line x1="-12" y1="-9" x2="12" y2="-9"/>
+    <line x1="-12" y1="-8" x2="12" y2="-8"/>
+    <line x1="-12" y1="-7" x2="12" y2="-7"/>
+    <line x1="-12" y1="-6" x2="12" y2="-6"/>
+    <line x1="-12" y1="-5" x2="12" y2="-5"/>
+    <line x1="-12" y1="-4" x2="12" y2="-4"/>
+    <line x1="-12" y1="-3" x2="12" y2="-3"/>
+    <line x1="-12" y1="-2" x2="12" y2="-2"/>
+    <line x1="-12" y1="-1" x2="12" y2="-1"/>
+    <line x1="-12" y1="1" x2="12" y2="1"/>
+    <line x1="-12" y1="2" x2="12" y2="2"/>
+    <line x1="-12" y1="3" x2="12" y2="3"/>
+    <line x1="-12" y1="4" x2="12" y2="4"/>
+    <line x1="-12" y1="5" x2="12" y2="5"/>
+    <line x1="-12" y1="6" x2="12" y2="6"/>
+    <line x1="-12" y1="7" x2="12" y2="7"/>
+    <line x1="-12" y1="8" x2="12" y2="8"/>
+    <line x1="-12" y1="9" x2="12" y2="9"/>
+    <line x1="-12" y1="10" x2="12" y2="10"/>
+    <line x1="-12" y1="11" x2="12" y2="11"/>
+    <line x1="-12" y1="12" x2="12" y2="12"/>
+</g>
+
+<!-- major axes inside warped space -->
+<line class="majorLine" x1="-12" y1="0" x2="12" y2="0"/>
+<line class="majorLine" x1="0" y1="-12" x2="0" y2="12"/>
+
+<!-- unit square -->
+<rect class="unitSquare" x="0" y="0" width="1" height="1"/>
+
+<!-- basis vectors -->
+<line class="iVec" x1="0" y1="0" x2="1" y2="0" marker-end="url(#arrowRed)"/>
+<line class="jVec" x1="0" y1="0" x2="0" y2="1" marker-end="url(#arrowGreen)"/>
+```
+
+</g>
+
+</svg>
