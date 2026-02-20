@@ -11,16 +11,17 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Fetch discussions
+      - name: Fetch only Quotes category
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           gh api graphql -f query='
           {
             repository(owner: "prabhatre", name: "prabhatre.github.io") {
-              discussions(first: 100, orderBy: {field: CREATED_AT, direction: DESC}) {
+              discussions(first: 100, categoryId: "DIC_kwDORBsRQ84C23y1", orderBy: {field: CREATED_AT, direction: DESC}) {
                 nodes {
                   number
+                  title
                   bodyText
                   author { login avatarUrl }
                 }
@@ -28,19 +29,14 @@ jobs:
             }
           }' > raw.json
 
-      - name: Convert
+      - name: Convert to site JSON
         run: |
-          jq '.data.repository.discussions.nodes | map({
-            id: .number,
-            body: .bodyText,
-            author: .author.login,
-            avatar: .author.avatarUrl
-          })' raw.json > quotes.json
+          jq '.data.repository.discussions.nodes' raw.json > quotes.json
 
-      - name: Commit
+      - name: Commit updated quotes
         run: |
-          git config user.name bot
-          git config user.email bot@github.com
+          git config user.name "quotes-bot"
+          git config user.email "bot@users.noreply.github.com"
           git add quotes.json
           git commit -m "update quotes" || echo "no changes"
           git push
