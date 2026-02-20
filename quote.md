@@ -4,26 +4,56 @@ permalink: /quote/
 ---
 
 <div id="quote"></div>
-
-{% include giscus-wall.html %}
+<div id="comments"></div>
 
 <script>
 const id = new URLSearchParams(location.search).get("id");
 
-fetch("/quotes.json")
-  .then(r=>r.json())
-  .then(data=>{
-    const q = data.find(x=>x.id==id);
-    if(!q) return;
+async function loadQuote() {
+  const container = document.getElementById("quote");
 
-    document.getElementById("quote").innerHTML = `
+  try {
+    const res = await fetch("/quotes.json?ts=" + Date.now());
+    const data = await res.json();
+
+    const q = data.find(x => String(x.number) === String(id));
+
+    if (!q) {
+      container.innerHTML = "<p>Quote not found.</p>";
+      return;
+    }
+
+    container.innerHTML = `
       <article class="quote-card">
-        <p class="quote-text">${q.body}</p>
+        <p class="quote-text">${q.bodyText}</p>
         <div class="quote-meta">
-          <img src="${q.avatar}">
-          <span>@${q.author}</span>
+          <img src="${q.author.avatarUrl}">
+          <span>@${q.author.login}</span>
         </div>
       </article>
     `;
-  });
+
+    // attach giscus comments to this discussion
+    const s=document.createElement("script");
+    s.src="https://giscus.app/client.js";
+    s.setAttribute("data-repo","prabhatre/prabhatre.github.io");
+    s.setAttribute("data-repo-id","R_kgDORBsRQw");
+    s.setAttribute("data-category","Quotes");
+    s.setAttribute("data-category-id","DIC_kwDORBsRQ84C23y1");
+    s.setAttribute("data-mapping","number");
+    s.setAttribute("data-term",q.number);
+    s.setAttribute("data-input-position","bottom");
+    s.setAttribute("data-theme","preferred_color_scheme");
+    s.crossOrigin="anonymous";
+    s.async=true;
+
+    document.getElementById("comments").appendChild(s);
+
+  } catch(err) {
+    container.innerHTML = "<p>Error loading quote.</p>";
+    console.error(err);
+  }
+}
+
+loadQuote();
 </script>
