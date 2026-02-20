@@ -34,9 +34,30 @@ displayMath: [['$$', '$$'], ['\\[', '\\]']]
       {{ content }}
     </main>
     {% if page.url contains "/wall" %}
-      <a href="https://github.com/prabhatre/prabhatre.github.io/discussions/new?category=quotes"
-   id="composeBtn" target="_blank">+</a>
-    {% endif %}
+<div id="composeBtn">+</div>
+<div id="composer"></div>
+{% endif %}
+
+<script>
+const btn=document.getElementById("composeBtn");
+if(btn){
+  btn.onclick=()=>{
+    document.getElementById("composer").innerHTML=`
+      <div class="composer-box">
+        <textarea id="quoteInput" placeholder="A passing thought..."></textarea>
+        <button onclick="publishQuote()">Post</button>
+      </div>`;
+  };
+}
+
+function publishQuote(){
+  const text=document.getElementById("quoteInput").value.trim();
+  if(!text) return;
+
+  const url=`https://github.com/prabhatre/prabhatre.github.io/discussions/new?category=quotes&title=.&body=${encodeURIComponent(text)}`;
+  location.href=url;
+}
+</script>
 
 
   </body>

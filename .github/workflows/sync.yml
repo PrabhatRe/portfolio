@@ -2,7 +2,7 @@ name: Sync Quotes
 
 on:
   discussion:
-    types: [created, edited]
+    types: [created, edited, deleted]
 
 jobs:
   build:
@@ -21,19 +21,20 @@ jobs:
               discussions(first: 100, categoryId: "DIC_kwDORBsRQ84C23y1", orderBy: {field: CREATED_AT, direction: DESC}) {
                 nodes {
                   number
-                  title
                   bodyText
+                  comments { totalCount }
+                  reactionGroups { content users { totalCount } }
                   author { login avatarUrl }
                 }
               }
             }
           }' > raw.json
 
-      - name: Convert to site JSON
+      - name: Convert
         run: |
           jq '.data.repository.discussions.nodes' raw.json > quotes.json
 
-      - name: Commit updated quotes
+      - name: Commit
         run: |
           git config user.name "quotes-bot"
           git config user.email "bot@users.noreply.github.com"
