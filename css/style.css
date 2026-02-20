@@ -198,3 +198,100 @@ blockquote p {
   }
 }
 
+/* floating compose button */
+#composeBtn{
+  position:fixed;
+  bottom:28px;
+  right:28px;
+  width:64px;
+  height:64px;
+  font-size:34px;
+  border-radius:50%;
+  background:#ff3b3b;
+  color:white;
+  text-decoration:none;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  z-index:2147483647;
+}
+
+#composeBtn:hover {
+  transform: scale(1.12);
+  box-shadow: 0 16px 40px rgba(0,0,0,.5);
+}
+
+
+/* wall container spacing */
+.wall-container {
+  margin-top: 40px;
+}
+
+/* remove comment UI feel */
+.gsc-header,
+.gsc-comments-count,
+.gsc-powered-by,
+.gsc-comment-box-tabs {
+  display: none !important;
+}
+
+.gsc-comment-box {
+  border: none !important;
+  background: transparent !important;
+}
+
+/* make posts look like feed cards */
+.gsc-comment {
+  border: none !important;
+  border-left: 3px solid #7aa2f7 !important;
+  padding: 14px 18px !important;
+  margin: 18px 0 !important;
+  background: rgba(255,255,255,0.02);
+  border-radius: 8px;
+  transition: background .2s ease;
+}
+
+.gsc-comment:hover {
+  background: rgba(255,255,255,0.05);
+}
+
+/* nicer writing box */
+.gsc-comment-box-textarea {
+  min-height: 80px !important;
+  font-size: 1rem !important;
+}
+
+/* avatars round */
+.gsc-comment-author-avatar img {
+  border-radius: 50%;
+}
+
+#write {
+  scroll-margin-top: 120px;
+}
+
+.quote-card{
+  margin:60px 0;
+  padding-left:18px;
+  border-left:3px solid #7aa2f7;
+}
+
+.quote-text{
+  font-size:1.4rem;
+  line-height:1.7;
+  margin:0 0 10px 0;
+}
+
+.quote-meta{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  font-size:0.9rem;
+  color:#aaa;
+}
+
+.quote-meta img{
+  width:22px;
+  height:22px;
+  border-radius:50%;
+}

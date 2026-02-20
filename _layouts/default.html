@@ -33,5 +33,11 @@ displayMath: [['$$', '$$'], ['\\[', '\\]']]
     <main>
       {{ content }}
     </main>
+    {% if page.url contains "/wall" %}
+      <a href="https://github.com/prabhatre/prabhatre.github.io/discussions/new?category=general"
+   id="composeBtn" target="_blank">+</a>
+    {% endif %}
+
+
   </body>
 </html>
