@@ -105,7 +105,7 @@ To avoid conflict miss, the blocks can now be mapped to **any cache line**.
 ![Fully Associative](../../assets/images/fullasso.png)
 
 Although this prevents conflict misses, the comparison cost is high.  
-Since the address is now divided into only two parts (**tag + offset**), every tag must be compared.
+Since the address is now divided into only two parts (**tag + offset**), every tag must be compared. *N* cache lines will have *N* comparators
 
 ![Comparator Structure](../../assets/images/compasso.png)
 
@@ -122,3 +122,5 @@ If a set contains **k cache lines**, it is called **k-way set associative**.
 It still needs **k comparators**, though.
 
 ![Set Associative](../../assets/images/setasso.png)
+
+**Direct mapping** has only **1 comparator**, because it just needs to compare *single record* of tag bits - because *index bits* determine the exact cache line, while in set associative *index bits* determine set of cache line and each contains **k cache lines** for **k - way set associative**, therefore **K comparators**
