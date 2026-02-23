@@ -12,7 +12,8 @@ char *s = “ hello world”;
 ```
 i was rather dumb to not understand the difference ( those who don't know **char s[] is contiguous shit**, while **\*s is a string literal**). after some digging  i found how *differently* they are stored in memory
 
-the c program when compiled, it generates a executable file of **ELF** format <img src="/portfolio/assets/images/elf.jpg" style="width:400px;">
+the c program when compiled, it generates a executable file of **ELF** format 
+![](../assets/images/elf.jpg)
 
 
 
