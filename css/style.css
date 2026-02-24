@@ -115,11 +115,7 @@ img {
 
 /* ---------- Lists (index pages / file explorer feel) ---------- */
 
-main ul {
-  list-style: none;
-  padding-left: 0;
-  margin-top: 2rem;
-}
+
 
 main ul li {
   margin-bottom: 0.8rem;
@@ -138,6 +134,20 @@ main ul li a {
 main > :first-child {
   margin-top: 0;
 }
+
+/* ---------- Blog Post Lists (Restore bullets) ---------- */
+
+main article.post ul {
+  list-style: disc;
+  padding-left: 1.5rem;
+  margin-top: 1rem;
+  margin-bottom: 1.6rem;
+}
+
+main article.post ul li {
+  margin-bottom: 0.45rem;
+}
+
 /* ---------- Blockquotes ---------- */
 
 blockquote {

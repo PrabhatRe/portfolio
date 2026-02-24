@@ -1,7 +1,21 @@
+---
+layout: post
+---
+
+
 Previously we looked at different kinds of mapping and the basic functionality of cache, but how do tag, index, and offset actually make sense to the cache? Obviously, that’s not how a cache’s point of view looks.
 
-Index -> 0 : valid | dirty | tag | data block  
-Index -> 1 : v | d | t | data block  
+```bash
+Index 0:
++--------+--------+--------+--------------+
+| Valid  | Dirty  |  Tag   |  Data Block  |
++--------+--------+--------+--------------+
+
+Index 1:
++--------+--------+--------+--------------+
+|   V    |   D    |   T    |  Data Block  |
++--------+--------+--------+--------------+
+```
 
 The translation is done by cache controller hardware. The CPU generates an address. The cache hardware splits it into tag, index, and offset. The controller fetches `cache[index]`, then compares:
 
@@ -33,12 +47,12 @@ On the occasion of a cache miss, different replacement policies exist — but on
 
 If space exists, we just place it there (except in direct mapping — there’s only one slot, so no choice, :( .
 
-Replacement policies make sense only for set-associative or fully associative caches.
+Replacement policies make sense only for **set-associative** or **fully associative** caches.
 
-- Least Recently Used (LRU)  
-- Least Frequently Used (LFU)  
-- First In First Out (FIFO)  
-- Optimal (mostly theoretical — how would you know the future access pattern? Future isn’t determined… unless you pretend it is. People do change.)
+- **Least Recently Used (LRU)**
+- **Least Frequently Used (LFU)**
+- **First In First Out (FIFO)**
+- **Optimal**: mostly theoretical — how would you know the future access pattern? Future isn’t determined… unless you pretend it is. People do change.
 
 These are mostly self-explanatory.
 
