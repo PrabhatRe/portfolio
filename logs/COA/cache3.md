@@ -1,4 +1,4 @@
-# Multi-Level Cache — The Real Game Begins
+# Multi-Level Cache
 
 Cache is very small in size.
 
