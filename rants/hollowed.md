@@ -1,11 +1,11 @@
 ---
-layout: post
+layout: poem
+title: hollowed
 ---
 
 
-# The Potter
 
-craftings of love, made from delicate clay  
+craftings of love, made from delicate clay
 scorched in heat, born with savaging burns  
 
 not to torment , not to hear screeching chimes  

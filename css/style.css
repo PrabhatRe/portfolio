@@ -361,3 +361,31 @@ video {
   margin: 2rem auto;
   border-radius: 8px;
 }
+
+/* ---------- Poem Layout ---------- */
+
+.poem-page {
+  text-align: center;
+  margin-top: 4rem;
+}
+
+.poem-title {
+  font-family: "Bungee", sans-serif;
+  font-size: 3rem;
+  letter-spacing: 6px;
+  margin-bottom: 3rem;
+  color: #f2f2f2;
+}
+
+.poem-body {
+  max-width: 55ch;
+  margin: 0 auto;
+  line-height: 2;
+  font-size: 1.2rem;
+  color: rgba(255,255,255,0.85);
+  text-shadow: 0 0 10px rgba(255,255,255,0.08);
+}
+
+.poem-body p {
+  margin: 1.8rem 0;
+}
